@@ -36,6 +36,8 @@ set number
 set wildmenu
 set t_Co=256
 colorscheme jellybeans
+
+let mapleader = ","
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 noremap <F5> <ESC>:w<CR>:!ruby %<CR>
@@ -43,8 +45,14 @@ nnoremap <F4> :TlistToggle<CR>
 highlight LineNr term=bold cterm=NONE ctermfg=Green ctermbg=NONE gui=NONE guifg=Green guibg=NONE
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
+inoremap ( ()<LEFT>
 nnoremap <silent> <C-l> <c-w>l
 nnoremap <silent> <C-h> <c-w>h
 nnoremap <silent> <C-k> <c-w>k
 nnoremap <silent> <C-j> <c-w>j
 let Tlist_Use_Right_Window   = 1
+	
+if has("autocmd")
+	autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+nmap <leader>v :tabedit $MYVIMRC<CR>
