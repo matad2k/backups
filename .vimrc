@@ -10,12 +10,13 @@ Bundle "kien/ctrlp.vim"
 Bundle "tpope/vim-surround"
 Bundle "scrooloose/nerdtree"
 Bundle "vim-ruby/vim-ruby"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+Bundle "Valloric/YouCompleteMe"
 
+Bundle "SirVer/ultisnips"
+Bundle "honza/vim-snippets"
+Bundle "tpope/vim-rails"
 set nocompatible
 filetype on
 filetype plugin on
@@ -56,3 +57,8 @@ if has("autocmd")
 	autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
+nmap <leader>q :qa! <CR>
+nmap <leader>w :w <CR>
+nmap <leader>wq :wq <CR>
+
+let g:UltiSnipsExpandTrigger="<c-j>"
